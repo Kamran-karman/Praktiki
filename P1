@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String args[]) {
+    System.out.println("Задание №1");
+    System.out.println("- - - - - - - -\n");
+    
+    Scanner scnr = new Scanner(System.in);
+    
+    System.out.print("Введите своё имя: ");
+    String name = scnr.nextLine();
+    //scnr.nextLine();
+    
+    System.out.print("Введите сназвание любимой марки: ");
+    String marka = scnr.nextLine();
+    //scnr.nextLine();
+    
+    System.out.println();
+    System.out.printf("%s любит авто марки %s", name, marka);
+    System.out.println("\n");
+    
+    System.out.println("==========\n");
+    System.out.println("Задание №2");
+    System.out.println("- - - - - - - -");
+    System.out.println("Сегодня 2025 год\n");
+    
+    System.out.print("Введите свой возраст: ");
+    int age = -1;
+    while(age< 0) {
+        age = scnr.nextInt();
+        System.out.println();
+        if(age < 0) {
+            System.out.println("Вам не может быть меньше нуля лет!\nВведите свой настоящий возраст!");
+        }
+    }
+    if (age < 100) {
+        System.out.printf("Вам исполнится 100 лет в %d году", 2025 + 100 - age);
+    }
+    else if (age > 100) {
+        System.out.printf("Вам исполнилость 100 лет в %d году", 2025 - (age - 100));
+    }
+    else {
+        System.out.printf("Вам исполнится или уже исполнилось 100 лет в этом году");
+    }
+    
+    
+  }
+}
