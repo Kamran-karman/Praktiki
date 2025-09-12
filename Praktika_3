@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        // №1
+        System.out.println("Задание №1\n");
+
+        String[] names = new String[5];
+        for(int i = 0; i < 5; i++) {
+            System.out.print("Введите имя: ");
+            names[i] = scnr.nextLine();
+        }
+        System.out.println("\nВывод имён в обычном порядке");
+        for(String i : names) {
+            System.out.println(i);
+        }
+        System.out.println("\nВывод имён в обратнои порядке");
+        for(int i = 4; i > -1; i--) {
+            System.out.println(names[i]);
+        }
+
+        // №2
+        System.out.println("\n===============\n");
+        System.out.println("Задание №2\n");
+
+        String[] marks = {"BMW", "Mersedess-Benz", "Audi", "", "", ""};
+        for(int i = marks.length - 3; i < marks.length; i++) {
+            System.out.print("Введите название марки: ");
+            marks[i] = scnr.nextLine();
+        }
+        System.out.println("\nВывод элементов массива");
+        for(String i : marks) {
+            System.out.println(i);
+        }
+
+        marks[0] = "Lada";
+        marks[1] = "ГАЗ";
+        marks[2] = "МАЗ";
+        marks[3] = "ЗИЛ";
+        marks[4] = "МАХ";
+        marks[5] = "МАХLada";
+        System.out.println("\nВывод элементов изменённого массива");
+        for(String i : marks) {
+            System.out.println(i);
+        }
+
+        // №3
+        System.out.println("\n===============\n");
+        System.out.println("Задание №3\n");
+
+        int[] ten = {12, 24, 22, 2, 33, 3, 0, 11, 10, 9};
+
+        int sum = 0;
+        int sum_ind = 0;
+
+        for(int i = 0; i < ten.length; i++) {
+            if(ten[i] % 2 == 0) {
+                sum += ten[i];
+            }
+            if(i % 2 == 0) {
+                sum_ind += ten[i];
+            }
+        }
+
+        System.out.println("Сумма все чётных элементов списка " + sum);
+        System.out.println("Сумма все элементов списка под чётным индексом " + sum_ind);
+    }
+}
