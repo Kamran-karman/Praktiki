@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        System.out.print("Введите имя: ");
+        String name = scnr.nextLine();
+        int len = name.length();
+        if(len != 0) {
+            if (len >= 2) {
+                if(len > 50) {
+                    System.out.println("Имя слишком длинное");
+                }
+                else {
+                    System.out.println(name);
+                }
+            }
+            else {
+                System.out.println("Имя слишком короткое");
+            }
+        }
+        else {
+            System.out.println("Имя пустое");
+        }
+
+        // =======================================
+        System.out.println("\n=======================================\n");
+        System.out.println("Цикл for");
+        for(int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nЦикл while");
+        int i = 0;
+        while(i < 5) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}
