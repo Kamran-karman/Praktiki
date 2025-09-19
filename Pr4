@@ -1,0 +1,72 @@
+
+class Transport  {
+    int weight;
+    int speed;
+    String color;
+    int seatsCount;
+
+    Transport (int weight, int speed, String color, int seatsCount) {
+        this.weight = weight;
+        this.speed = speed;
+        this.color = color;
+        this.seatsCount = seatsCount;
+    }
+
+    void ride() {
+        System.out.println("Еду...");
+    }
+
+    void startEngine () {
+        System.out.println("Двигатель заведён");
+    }
+
+    void stopEngine() {
+        System.out.println("Двигатель заглушен");
+    }
+
+    void getCharacteristics () {
+        System.out.printf("Характеристики транспорта:\nВес: %d кг\nМакс. скорость: %d км/ч\nЦвет: %s \nКоличество мест: %d",
+                this.weight, this.speed, this.color, this.seatsCount);
+    }
+}
+
+class Plane extends Transport {
+    int max_height;
+
+    Plane(int weight, int speed, String color, int seatsCount, int max_height) {
+        super(weight, speed, color, seatsCount);
+        this.max_height = max_height;
+    }
+
+    @Override
+    void ride() {
+        System.out.println("Лечу...");
+    }
+
+    @Override
+    void getCharacteristics() {
+        super.getCharacteristics();
+        System.out.printf("\nМакс. высота: %d м", this.max_height);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Задание №1\n");
+        Transport tran = new Transport(200, 150, "Dark Blue", 2);
+
+        tran.startEngine();
+        tran.ride();
+        tran.stopEngine();
+        tran.getCharacteristics();
+
+
+        System.out.println("\nЗадание №2\n");
+        Plane plane = new Plane(10000, 230, "White", 6, 2000);
+        plane.startEngine();
+        plane.ride();
+        plane.stopEngine();
+        plane.getCharacteristics();
+    }
+}
